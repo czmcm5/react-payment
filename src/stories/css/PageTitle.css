@@ -1,0 +1,13 @@
+.storybook-pageTitle {
+  padding-left: 0.5rem;
+  margin: 2.5rem 0 1.5rem 0;
+  font-size: 18px;
+}
+.pageTitle--line {
+  border-bottom: 3px solid lightgray;
+}
+.pageTitle--short-line {
+  margin-top: 1rem;
+  width: 4.5rem;
+  border-bottom: 3px solid #eeeeee;
+}

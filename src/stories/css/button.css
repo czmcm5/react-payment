@@ -1,0 +1,27 @@
+.storybook-button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.button-square--active {
+  flex: 1;
+  font-size: 20px;
+  color: white;
+  background-color: #2ac1bc;
+}
+.button-square--disabled {
+  flex: 1;
+  font-size: 20px;
+  color: white;
+  background-color: #dfdfdf;
+}
+.button-text--active {
+  color: #2ac1bc;
+}
+.button-text--disabled {
+  color: #858585;
+}
