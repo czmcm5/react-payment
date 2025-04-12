@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+### **카드 추가**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- [ ] **`<`**(뒤로가기) 버튼 클릭 시, 카드 목록 페이지로 이동한다.
+- [ ] 카드 번호를 입력 받을 수 있다.
+    - [ ] 카드 번호는 숫자만 입력가능하다.
+    - [ ] 카드 번호 4자리마다 `- [ ]`가 삽입된다.
+    - [ ] 카드 번호는 실시간으로 카드 UI에 반영된다.
+    - [ ] 카드 번호는 앞 8자리만 숫자로 보여지고, 나머지 숫자는 `*`로 보여진다.
+- [ ] 만료일을 입력 받을 수 있다.
+    - [ ] **`MM / YY`** 로 placeholder를 적용한다.
+    - [ ] 월, 년 사이에 자동으로 **`/`**가 삽입된다.
+    - [ ] 만료일은 실시간으로 카드 UI에 반영된다.
+    - [ ] 월은 1이상 12이하 숫자여야 한다.
+- [ ] 보안코드를 입력 받을 수 있다.
+    - [ ] 보안코드는 `*`으로 보여진다.
+    - [ ] 보안코드는 숫자만 입력가능하다.
+- [ ] 카드 비밀번호의 앞 2자리를 입력 받을 수 있다.
+    - [ ] 카드 비밀번호는 각 폼마다 한자리 숫자만 입력가능하다.
+    - [ ] 카드 번호 입력 시, `*`으로 보여진다.
+- [ ] 카드 소유자 이름을 입력 받을 수 있다.
+    - [ ] 이름은 30자리까지 입력할 수 있다.
+    - [ ] 이름 입력 폼 위에, 현재 입력 자릿수와 최대 입력 자릿수를 실시간으로 보여준다.
+- [ ] 카드 추가 완료시 카드 등록 완료 페이지로 이동한다.
 
-## Available Scripts
+### **카드 추가 확인**
 
-In the project directory, you can run:
+- [ ] 이전 폼에서 입력된 카드를 보여준다.
+- [ ] 카드 별칭을 입력할 수 있다.
+    - [ ] placeholder는 **`카드 별칭 (선택)`**이다.
+    - [ ] 빈 입력값인 경우, 카드사 이름이 별칭으로 저장된다.
+    - [ ] 최대 길이는 10자리이다.
+- [ ] 확인 버튼을 누르면, 카드 목록 페이지로 이동한다.
 
-### `npm start`
+### **카드 목록**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [ ] 카드 목록을 조회할 수 있다.
+- [ ] 카드 목록은 최신순(내림차순)으로 정렬된다.
+- [ ] 목록 최상단에 **`+`**을 누르면 카드 추가 페이지로 이동한다.
+- [ ] 카드를 클릭하면, 카드 별칭 수정(카드 추가 완료 페이지)로 이동한다.
+- [ ] 카드를 삭제할 수 있다.
