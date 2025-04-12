@@ -1,38 +1,39 @@
-import styled from "styled-components";
+import styles from "../style/card.module.css";
 
-const CardComponent = () => {
+interface CardProps {
+  size?: "small" | "medium" | "large";
+  color?: string;
+  onClick?: () => void;
+}
+
+const Card = ({ color = "", size = "medium", ...props }: CardProps) => {
+  const bgColor =
+    colorList[color as keyof typeof colorList] ?? colorList.default;
+
   return (
-    <CardBox>
-      <div className="card-nickname">현석카드</div>
-      <div className="chip" />
-      <div className="card-number">1111 2222 **** ****</div>
-      <div className="card-name">SSS</div>
-    </CardBox>
+    <div
+      className={`${styles["basic-card"]} ${styles[size]}`}
+      {...props}
+      style={{ backgroundColor: bgColor }}
+    >
+      <div className={styles.company}>현석카드</div>
+      <div className={styles.chip} />
+      <div className={styles.number}>1111 2222 **** ****</div>
+      <div className={styles.name}>SSS</div>
+    </div>
   );
 };
 
-export default CardComponent;
+export default Card;
 
-const CardBox = styled.div`
-  box-sizing: border-box;
-  width: 70%;
-  height: 9rem;
-  margin: auto;
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: #85dec8;
-  box-shadow: 2px 2px 4px 2px #bbbbbb;
-  .card-nickname {
-    font-size: 12px;
-  }
-  .chip {
-    width: 2.5rem;
-    height: 1.7rem;
-    margin: 1rem 0;
-    border-radius: 4px;
-    background-color: #ccb76c;
-  }
-  .card-number {
-    text-align: center;
-  }
-`;
+const colorList = {
+  red: "#e24141",
+  blue: "#547ce4",
+  green: "#7dbf73",
+  coolPink: "#d959b7",
+  mint: "#85dec8",
+  warmPink: "#E76E9A",
+  organge: "#F26D3D",
+  yellow: "#F2BC57",
+  default: "lightGray",
+};

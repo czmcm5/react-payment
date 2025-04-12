@@ -1,29 +1,32 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-
-import { Button } from "../component/Button";
+import Card from "../component/Card";
 
 const meta = {
-  title: "Example/Button",
-  component: Button,
+  title: "Example/Card",
+  component: Card,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
   args: { onClick: fn() },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Card>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const TextBtn: Story = {
+export const Small: Story = {
   args: {
-    active: false,
+    size: "small",
+    color: "mint",
   },
 };
-export const SquareBtn: Story = {
+
+export const Medium: Story = {};
+
+export const Large: Story = {
   args: {
-    shape: "square",
-    active: false,
+    size: "large",
+    color: "red",
   },
 };

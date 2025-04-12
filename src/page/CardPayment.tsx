@@ -1,14 +1,28 @@
 import styled from "styled-components";
-import ModalLayout from "../style/ModalLayout";
-import { Button } from "../stories/Button";
-import { PageTitle } from "../stories/PageTitle";
-import CardComponent from "../component/Card";
+import { Button } from "../component/Button";
+import Card from "../component/Card";
+import { PageTitle } from "../component/PageTitle";
+import ModalLayout from "../component/Modal";
 
 const CardSlide = () => {
   return (
     <>
       <PageTitle text="보유카드" line="short-line" />
-      <CardComponent />
+
+      <SlideBpx>
+        <div className="slide-arrow">{"<"}</div>
+        <div className="cardBox">
+          <Card color="mint" size="small" />
+          <div className="card-nickname">엄카</div>
+        </div>
+        <div className="slide-arrow">{">"}</div>
+      </SlideBpx>
+
+      <MiniText>
+        계좌정보 변경은
+        <span> 설정{">"}계좌정보 </span>
+        에서 확인하실 수 있습니다.
+      </MiniText>
     </>
   );
 };
@@ -83,6 +97,27 @@ const ContentBox = styled.div`
   padding: 1rem;
   margin-bottom: 1rem;
 `;
+const SlideBpx = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  > div.slide-arrow {
+    margin: 0 1rem;
+    cursor: pointer;
+  }
+  > div.cardBox {
+    flex: 1;
+    padding: 1.5rem 1.8rem;
+    background-color: #f6f6f6;
+  }
+  div.card-nickname {
+    margin-top: 0.5rem;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #333333;
+  }
+`;
 const AmountBox = styled.div`
   display: flex;
   justify-content: space-between;
@@ -106,4 +141,11 @@ const TermsBox = styled.div`
 `;
 const ButtonGroup = styled.div`
   display: flex;
+`;
+const MiniText = styled.div`
+  text-align: right;
+  font-size: 12px;
+  span {
+    font-weight: bold;
+  }
 `;

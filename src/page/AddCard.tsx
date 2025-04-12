@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import ModalLayout from "../style/ModalLayout";
-import { Button } from "../stories/Button";
+import ModalLayout from "../component/Modal";
+import { Button } from "../component/Button";
 import useAddCard from "../hook/useAddCard";
-import CardComponent from "../component/Card";
+import StyledCard from "../component/Card";
 
 const AddCard = () => {
   const { form, updateField, submit } = useAddCard();
@@ -14,7 +14,9 @@ const AddCard = () => {
         <span>카드추가</span>
       </Topbar>
 
-      <CardComponent />
+      <CardBox>
+        <StyledCard />
+      </CardBox>
 
       <FormBox>
         <label>카드 번호</label>
@@ -82,6 +84,9 @@ const Topbar = styled.div`
   > span {
     margin-right: 1rem;
   }
+`;
+const CardBox = styled.div`
+  margin: 0 1rem;
 `;
 const FormBox = styled.div`
   flex: 1;
