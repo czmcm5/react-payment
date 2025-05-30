@@ -1,10 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../component/Button";
 import Card from "../component/Card";
-import { PageTitle } from "../component/PageTitle";
 import ModalLayout from "../component/Modal";
+import { PageTitle } from "../component/PageTitle";
+import useGetCardList from "../hook/useGetCardList";
 
 const CardSlide = () => {
+  const { card } = useGetCardList();
+  const Navigate = useNavigate();
+
+  console.log(card);
+
   return (
     <>
       <PageTitle text="보유카드" line="short-line" />
@@ -12,8 +19,14 @@ const CardSlide = () => {
       <SlideBpx>
         <div className="slide-arrow">{"<"}</div>
         <div className="cardBox">
-          <Card color="mint" size="small" />
-          <div className="card-nickname">엄카</div>
+          {card ? (
+            <Card color="mint" size="small" />
+          ) : (
+            <div className="card-add" onClick={() => Navigate("/add")}>
+              +
+            </div>
+          )}
+          <div className="card-nickname">{card && "엄카"}</div>
         </div>
         <div className="slide-arrow">{">"}</div>
       </SlideBpx>
@@ -26,6 +39,7 @@ const CardSlide = () => {
     </>
   );
 };
+
 const TotalAmount = () => {
   return (
     <>
@@ -111,11 +125,23 @@ const SlideBpx = styled.div`
     background-color: #f6f6f6;
   }
   div.card-nickname {
+    height: 1rem;
     margin-top: 0.5rem;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
     color: #333333;
+  }
+  div.card-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 6rem;
+    max-width: 12rem;
+    background-color: lightgray;
+    border-radius: 4px;
+    cursor: pointer;
   }
 `;
 const AmountBox = styled.div`

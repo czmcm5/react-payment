@@ -13,6 +13,7 @@
 }
 
 .box {
+  position: relative;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -21,6 +22,6 @@
   margin: auto 0rem;
   background-color: white;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: auto;
   padding: 1.5rem;
 }

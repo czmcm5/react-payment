@@ -2,13 +2,16 @@ import styled from "styled-components";
 import { Button } from "../component/Button";
 import Card from "../component/Card";
 import ModalLayout from "../component/Modal";
+import useSaveCard from "../hook/useSaveCard";
 
 const AddSuccess = () => {
+  const { color } = useSaveCard();
+
   return (
     <ModalLayout>
       <ContentBox>
         <div className="title">카드등록이 완료되었습니다.</div>
-        <Card size="large" />
+        <Card color={color} size="large" />
         <input />
       </ContentBox>
 

@@ -1,4 +1,5 @@
 import styles from "../style/card.module.css";
+import { colorList } from "./SelectColor";
 
 interface CardProps {
   size?: "small" | "medium" | "large";
@@ -23,17 +24,4 @@ const Card = ({ color = "", size = "medium", ...props }: CardProps) => {
     </div>
   );
 };
-
 export default Card;
-
-const colorList = {
-  red: "#e24141",
-  blue: "#547ce4",
-  green: "#7dbf73",
-  coolPink: "#d959b7",
-  mint: "#85dec8",
-  warmPink: "#E76E9A",
-  organge: "#F26D3D",
-  yellow: "#F2BC57",
-  default: "lightGray",
-};
