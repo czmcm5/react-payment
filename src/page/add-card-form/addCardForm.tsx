@@ -1,15 +1,12 @@
-import styled from "styled-components";
-import ModalLayout from "../component/Modal";
-import { Button } from "../component/Button";
-import useAddCard from "../hook/useAddCard";
-import Card from "../component/Card";
-import SelectColor from "../component/SelectColor";
-import useModal from "../hook/useModal";
-import { useNavigate } from "react-router-dom";
-
-const AddCard = ({ form, update, submit }) => {
+const AddCardForm = ({}) => {
   const Navigation = useNavigate();
+  const { form, update, submit } = useAddCard();
   const { open, open_modal, close_modal } = useModal();
+
+  const closeModal = (color: string) => {
+    update.color(color);
+    close_modal();
+  };
 
   return (
     <ModalLayout>
@@ -19,7 +16,7 @@ const AddCard = ({ form, update, submit }) => {
       </Topbar>
 
       <CardBox>
-        <Card color={form.color} onClick={open_modal} />
+        <StyledCard color={form.color} onClick={open_modal} />
       </CardBox>
 
       <FormBox>
@@ -98,64 +95,10 @@ const AddCard = ({ form, update, submit }) => {
       <ButtonBox>
         <Button label="다음" onClick={submit} />
       </ButtonBox>
+
+      <SelectColor open={open} onClick={closeModal} />
     </ModalLayout>
   );
 };
 
-export default AddCard;
-
-const Topbar = styled.div`
-  display: flex;
-  margin-bottom: 1.5rem;
-  font-size: 18px;
-  > span {
-    margin-right: 1rem;
-  }
-`;
-const CardBox = styled.div`
-  margin: 0 1rem;
-`;
-const FormBox = styled.div`
-  flex: 1;
-  label {
-    display: block;
-    margin-top: 1.2rem;
-    font-size: 12px;
-    color: #525252;
-  }
-`;
-const InputBox = styled.div<{ width?: number }>`
-  display: flex;
-  width: ${(props) => (props.width ? `${props.width}rem` : "100%")};
-  height: 3rem;
-  margin-top: 0.5rem;
-  background-color: #ecebf1;
-  border-radius: 8px;
-  input {
-    width: 100%;
-    font-size: 18px;
-    text-align: center;
-    color: #2ac1bc;
-    background-color: #ecebf1;
-    border-radius: 8px;
-    caret-color: black;
-  }
-  span {
-    display: flex;
-    margin: 0 0.5rem;
-    align-items: center;
-    justify-items: center;
-    font-size: 18px;
-  }
-  &.back-white {
-    background-color: white;
-  }
-  &.back-white > input {
-    width: 2.5rem;
-    margin-right: 0.5rem;
-  }
-`;
-const ButtonBox = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`;
+export default AddCardForm;
