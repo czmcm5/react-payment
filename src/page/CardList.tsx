@@ -1,22 +1,22 @@
-import styled from "styled-components";
-import Card from "../component/Card";
-import ModalLayout from "../component/Modal";
-import useGetCardList from "../hook/useGetCardList";
-import { useNavigate } from "react-router-dom";
+import styled from 'styled-components';
+import Card from '../component/Card';
+import ModalLayout from '../component/Modal';
+import useGetCardList from '../hook/useGetCardList';
+import { useNavigate } from 'react-router-dom';
 
 const CardList = () => {
   const Navigation = useNavigate();
-  const { cardList } = useGetCardList();
+  const { list } = useGetCardList();
 
   return (
     <ModalLayout>
-      <Topbar onClick={() => Navigation("/")}>
-        <span>{"<"}</span>
+      <Topbar onClick={() => Navigation('/')}>
+        <span>{'<'}</span>
         <span>처음으로</span>
       </Topbar>
 
       <ScrollBox>
-        {cardList.map((item, idx) => {
+        {list.map((item, idx) => {
           return (
             <CardBox key={idx}>
               <Card form={item} size="large" />
