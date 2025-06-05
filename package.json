@@ -1,5 +1,4 @@
 {
-  "homepage": "https://czmcm5.github.io/react-payment/",
   "name": "react-payment",
   "version": "0.1.0",
   "private": true,
@@ -26,7 +25,6 @@
     "build-storybook": "storybook build",
     "test": "vitest",
     "prepare": "husky",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
