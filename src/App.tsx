@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import CardPayment from "./page/CardPayment";
-import AddCard from "./page/AddCard";
+import AddCard from "./page/AddCard/AddCard";
 import AddSuccess from "./page/AddSuccess.tsx";
 import CardList from "./page/CardList";
 

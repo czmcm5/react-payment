@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CardInfo } from "../interface/card";
+import { CardInfo } from "../model/card";
 
 const useGetCardList = () => {
   const [cardList, setCardList] = useState<CardInfo[]>([]);

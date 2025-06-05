@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import useModal from "../hook/useModal";
 
 export const colorList = {
   red: "#e24141",
