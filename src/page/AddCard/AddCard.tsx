@@ -1,10 +1,10 @@
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import { Button } from "../../component/Button";
-import ModalLayout from "../../component/Modal";
-import useAddCard from "../../hook/useAddCard";
-import AddCardForm from "./compoent/addCardForm";
-import AddCardColor from "./compoent/addCardColor";
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { Button } from '../../component/Button';
+import ModalLayout from '../../component/Modal';
+import useAddCard from '../../hook/useAddCard';
+import AddCardForm from './compoent/addCardForm';
+import AddCardColor from './compoent/addCardColor';
 
 const AddCard = () => {
   const Navigation = useNavigate();
@@ -13,7 +13,7 @@ const AddCard = () => {
   return (
     <ModalLayout>
       <Topbar onClick={() => Navigation(-1)}>
-        <span>{"<"}</span>
+        <span>{'<'}</span>
         <span>카드추가</span>
       </Topbar>
 
