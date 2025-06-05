@@ -1,44 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { Button } from "../component/Button";
-import Card from "../component/Card";
-import ModalLayout from "../component/Modal";
-import { PageTitle } from "../component/PageTitle";
-import useGetCardList from "../hook/useGetCardList";
-
-const CardSlide = () => {
-  const { card } = useGetCardList();
-  const Navigate = useNavigate();
-
-  console.log(card);
-
-  return (
-    <>
-      <PageTitle text="보유카드" line="short-line" />
-
-      <SlideBpx>
-        <div className="slide-arrow">{"<"}</div>
-        <div className="cardBox">
-          {card ? (
-            <Card color="mint" size="small" />
-          ) : (
-            <div className="card-add" onClick={() => Navigate("/add")}>
-              +
-            </div>
-          )}
-          <div className="card-nickname">{card && "엄카"}</div>
-        </div>
-        <div className="slide-arrow">{">"}</div>
-      </SlideBpx>
-
-      <MiniText>
-        계좌정보 변경은
-        <span> 설정{">"}계좌정보 </span>
-        에서 확인하실 수 있습니다.
-      </MiniText>
-    </>
-  );
-};
+import { Button } from "../../component/Button";
+import ModalLayout from "../../component/Modal";
+import { PageTitle } from "../../component/PageTitle";
+import CardSlide from "./component/Payment";
 
 const TotalAmount = () => {
   return (
@@ -68,7 +32,7 @@ const TermsItem = () => {
   );
 };
 
-const CardPayment = () => {
+const Payment = () => {
   return (
     <ModalLayout>
       <Topbar>
@@ -77,8 +41,17 @@ const CardPayment = () => {
         <span>결제</span>
       </Topbar>
 
+      <PageTitle text="보유카드" line="short-line" />
+
       <ContentBox>
         <CardSlide />
+
+        <MiniText>
+          계좌정보 변경은
+          <span> 설정{">"}계좌정보 </span>
+          에서 확인하실 수 있습니다.
+        </MiniText>
+
         <TotalAmount />
         <TermsItem />
       </ContentBox>
@@ -91,7 +64,7 @@ const CardPayment = () => {
   );
 };
 
-export default CardPayment;
+export default Payment;
 
 const Topbar = styled.div`
   display: flex;
@@ -110,39 +83,6 @@ const ContentBox = styled.div`
   flex: 1;
   padding: 1rem;
   margin-bottom: 1rem;
-`;
-const SlideBpx = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-  > div.slide-arrow {
-    margin: 0 1rem;
-    cursor: pointer;
-  }
-  > div.cardBox {
-    flex: 1;
-    padding: 1.5rem 1.8rem;
-    background-color: #f6f6f6;
-  }
-  div.card-nickname {
-    height: 1rem;
-    margin-top: 0.5rem;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    color: #333333;
-  }
-  div.card-add {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 6rem;
-    max-width: 12rem;
-    background-color: lightgray;
-    border-radius: 4px;
-    cursor: pointer;
-  }
 `;
 const AmountBox = styled.div`
   display: flex;

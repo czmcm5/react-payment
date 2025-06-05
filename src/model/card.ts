@@ -8,7 +8,7 @@ interface BaseCardInfo {
 }
 
 export interface SaveCardInfo extends BaseCardInfo {
-  cardnick: string;
+  nickname: string;
 }
 
 export interface InsertPayload extends BaseCardInfo {
