@@ -1,11 +1,11 @@
-import { InsertPayload } from "../model/card";
+import styled from "styled-components";
+import { SaveCardInfo } from "../model/card";
 import styles from "../style/card.module.css";
 import { maskCardNumber } from "../utils/card";
 import { colorList } from "./SelectColor";
-import styled from "styled-components";
 
 interface CardProps {
-  form: InsertPayload;
+  form: SaveCardInfo;
   size?: "small" | "medium" | "large";
   onClick?: () => void;
 }

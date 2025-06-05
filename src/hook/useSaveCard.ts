@@ -1,16 +1,47 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { ChangeEvent, useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const useSaveCard = () => {
-  const location = useLocation();
-  const [cardName, setCardName] = useState("");
+  const Navigate = useNavigate();
+  const { state } = useLocation();
+  const [cardNick, setCardNick] = useState("");
 
-  const saveCard = () => {};
+  useEffect(() => {
+    if (!state) {
+      Navigate("/add");
+    }
+  }, []);
+
+  const updateCardNick = (e: ChangeEvent<HTMLInputElement>) =>
+    setCardNick(e.target.value.trim());
+
+  const saveCard = () => {
+    const { cardPw1, cardPw2, ...rest } = state.card;
+    const nickname = cardNick || state.card.name;
+
+    const newCard = { ...rest, nickname };
+
+    const cardList = localStorage.getItem("cardList");
+
+    if (!cardList) {
+      localStorage.setItem("cardList", JSON.stringify([newCard]));
+    } else {
+      try {
+        const copyList = JSON.parse(cardList);
+        copyList.push(newCard);
+        localStorage.setItem("cardList", JSON.stringify(copyList));
+      } catch (err) {
+        throw new Error("cardList 파싱에 에러:" + err);
+      }
+    }
+
+    Navigate("/list");
+  };
 
   return {
-    color: location.state.card.color,
-    cardName,
-    setCardName: (name: string) => setCardName(name),
+    form: { ...state.card, cardNick },
+    updateCardNick,
+    saveCard,
   };
 };
 export default useSaveCard;

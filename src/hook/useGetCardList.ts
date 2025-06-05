@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { CardInfo } from "../model/card";
+import { SaveCardInfo } from "../model/card";
 
 const useGetCardList = () => {
-  const [cardList, setCardList] = useState<CardInfo[]>([]);
-  const [pageNum, setPageNum] = useState(0);
+  const cardList: SaveCardInfo[] = JSON.parse(
+    localStorage.getItem("cardList") || "[]"
+  );
 
-  return { card: cardList[pageNum] || null };
+  return { cardList };
 };
 
 export default useGetCardList;

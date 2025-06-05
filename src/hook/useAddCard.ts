@@ -65,7 +65,6 @@ const useAddCard = () => {
   };
 
   const submit = () => {
-    console.log(form);
     if (Object.values(form).some((value) => value === "")) {
       return alert("모든 항목을 채워주세요.");
     }

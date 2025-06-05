@@ -1,4 +1,4 @@
-export interface CardInfo {
+interface BaseCardInfo {
   color: string;
   cardNum: string;
   MM: string;
@@ -7,7 +7,11 @@ export interface CardInfo {
   CVCcode: string;
 }
 
-export interface InsertPayload extends CardInfo {
+export interface SaveCardInfo extends BaseCardInfo {
+  cardnick: string;
+}
+
+export interface InsertPayload extends BaseCardInfo {
   cardPw1: string;
   cardPw2: string;
 }

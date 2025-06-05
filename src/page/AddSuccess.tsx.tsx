@@ -5,18 +5,23 @@ import ModalLayout from "../component/Modal";
 import useSaveCard from "../hook/useSaveCard";
 
 const AddSuccess = () => {
-  const { color } = useSaveCard();
+  const { form, updateCardNick, saveCard } = useSaveCard();
 
   return (
     <ModalLayout>
       <ContentBox>
         <div className="title">카드등록이 완료되었습니다.</div>
-        <Card color={color} size="large" />
-        <input />
+        <Card form={form} size="large" />
+        <input
+          value={form.cardNick}
+          onChange={updateCardNick}
+          placeholder="카드 별칭 (선택)"
+          maxLength={10}
+        />
       </ContentBox>
 
       <ButtonBox>
-        <Button label="다음" />
+        <Button label="다음" onClick={saveCard} />
       </ButtonBox>
     </ModalLayout>
   );

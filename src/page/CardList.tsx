@@ -1,18 +1,26 @@
 import styled from "styled-components";
 import Card from "../component/Card";
 import ModalLayout from "../component/Modal";
-
-const testArr = new Array(22).fill([""]);
+import useGetCardList from "../hook/useGetCardList";
+import { useNavigate } from "react-router-dom";
 
 const CardList = () => {
+  const Navigation = useNavigate();
+  const { cardList } = useGetCardList();
+
   return (
     <ModalLayout>
+      <Topbar onClick={() => Navigation("/")}>
+        <span>{"<"}</span>
+        <span>처음으로</span>
+      </Topbar>
+
       <ScrollBox>
-        {testArr.map((_, idx) => {
+        {cardList.map((item, idx) => {
           return (
-            <CardBox>
-              <Card />
-              <div className="card-name">엄카</div>
+            <CardBox key={idx}>
+              <Card form={item} size="large" />
+              <div className="card-name">{item?.name}</div>
             </CardBox>
           );
         })}
@@ -23,6 +31,14 @@ const CardList = () => {
 
 export default CardList;
 
+const Topbar = styled.div`
+  display: flex;
+  margin-bottom: 1.5rem;
+  font-size: 18px;
+  > span {
+    margin-right: 1rem;
+  }
+`;
 const ScrollBox = styled.div`
   flex: 1;
   overflow: auto;
