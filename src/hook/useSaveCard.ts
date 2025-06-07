@@ -39,7 +39,7 @@ const useSaveCard = () => {
   };
 
   return {
-    form: { ...state.card, cardNick },
+    form: { ...state?.card, cardNick },
     updateCardNick,
     saveCard,
   };

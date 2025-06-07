@@ -9,7 +9,7 @@ const useGetCardList = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const nextPage = () => {
-    if (currentPage === cardList.length) {
+    if (currentPage === cardList.length - 1) {
       return;
     }
     setCurrentPage((prev) => prev + 1);
