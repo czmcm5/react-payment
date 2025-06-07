@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { Button } from "../../component/Button";
-import ModalLayout from "../../component/Modal";
-import { PageTitle } from "../../component/PageTitle";
-import CardSlide from "./component/Payment";
+import styled from 'styled-components';
+import { Button } from '../../component/Button';
+import ModalLayout from '../../component/Modal';
+import { PageTitle } from '../../component/PageTitle';
+import CardSlide from './component/Payment';
 
 const TotalAmount = () => {
   return (
@@ -48,7 +48,7 @@ const Payment = () => {
 
         <MiniText>
           계좌정보 변경은
-          <span> 설정{">"}계좌정보 </span>
+          <span> 설정{'>'}계좌정보 </span>
           에서 확인하실 수 있습니다.
         </MiniText>
 

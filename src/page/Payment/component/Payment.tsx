@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import useGetCardList from "../../../hook/useGetCardList";
-import Card from "../../../component/Card";
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import useGetCardList from '../../../hook/useGetCardList';
+import Card from '../../../component/Card';
 
 const CardSlide = () => {
   const card = useGetCardList();
@@ -9,18 +9,18 @@ const CardSlide = () => {
 
   return (
     <SlideBpx>
-      <PageNavi onClick={card.prePage}>{"<"}</PageNavi>
+      <PageNavi onClick={card.prePage}>{'<'}</PageNavi>
       <CardBox>
         {card.info ? (
           <>
-            <Card form={card.info} size="small" />
+            <Card {...card.info} size="small" />
             <div className="nickname">{card.info.nickname}</div>
           </>
         ) : (
-          <AddBtn onClick={() => Navigate("/add")}>+</AddBtn>
+          <AddBtn onClick={() => Navigate('/add')}>+</AddBtn>
         )}
       </CardBox>
-      <PageNavi onClick={card.nextPage}>{">"}</PageNavi>
+      <PageNavi onClick={card.nextPage}>{'>'}</PageNavi>
     </SlideBpx>
   );
 };

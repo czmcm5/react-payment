@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import Card from "../../../component/Card";
-import SelectColor from "../../../component/SelectColor";
-import useModal from "../../../hook/useModal";
-import { InsertPayload } from "../../../model/card";
+import styled from 'styled-components';
+import Card from '../../../component/Card';
+import SelectColor from '../../../component/SelectColor';
+import useModal from '../../../hook/useModal';
+import { InsertPayload } from '../../../model/card';
 
 const AddCardColor = ({
   form,
@@ -20,7 +20,7 @@ const AddCardColor = ({
 
   return (
     <CardBox>
-      <Card form={form} onClick={open_modal} />
+      <Card {...form} onClick={open_modal} />
       <SelectColor open={open} onClick={close} />
     </CardBox>
   );

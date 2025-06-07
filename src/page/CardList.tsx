@@ -19,7 +19,7 @@ const CardList = () => {
         {list.map((item, idx) => {
           return (
             <CardBox key={idx}>
-              <Card form={item} size="large" />
+              <Card {...item} size="large" />
               <div className="card-name">{item?.name}</div>
             </CardBox>
           );

@@ -1,15 +1,15 @@
-import { useState } from "react";
-import { SaveCardInfo } from "../model/card";
+import { useState } from 'react';
+import { SaveCardInfo } from '../model/card';
 
 const useGetCardList = () => {
   const cardList: SaveCardInfo[] = JSON.parse(
-    localStorage.getItem("cardList") || "[]"
+    localStorage.getItem('cardList') || '[]',
   );
 
   const [currentPage, setCurrentPage] = useState(0);
 
   const nextPage = () => {
-    if (currentPage === cardList.length) {
+    if (currentPage === cardList.length - 1) {
       return;
     }
     setCurrentPage((prev) => prev + 1);

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { InsertPayload } from "../../../model/card";
+import styled from 'styled-components';
+import { InsertPayload } from '../../../model/card';
 
 interface UpdateForm {
   color: (color: string) => void;
@@ -20,12 +20,12 @@ const AddCardForm = ({
 }) => {
   return (
     <FormBox>
-      <label>카드 번호</label>
+      <span>카드 번호</span>
       <InputBox>
         <input maxLength={20} value={form.cardNum} onChange={update.cardNum} />
       </InputBox>
 
-      <label>만료일</label>
+      <span>만료일</span>
       <InputBox width={10}>
         <input
           value={form.MM}
@@ -42,7 +42,7 @@ const AddCardForm = ({
         />
       </InputBox>
 
-      <label>카드 소유자 이름(선택)</label>
+      <span>카드 소유자 이름(선택)</span>
       <InputBox>
         <input
           value={form.name}
@@ -52,7 +52,7 @@ const AddCardForm = ({
         />
       </InputBox>
 
-      <label>보안코드(CVC/CVV)</label>
+      <span>보안코드(CVC/CVV)</span>
       <InputBox width={6}>
         <input
           type="password"
@@ -62,7 +62,7 @@ const AddCardForm = ({
         />
       </InputBox>
 
-      <label>카드 비밀번호</label>
+      <span>카드 비밀번호</span>
       <PasswordBox>
         <input
           type="password"
@@ -87,7 +87,7 @@ export default AddCardForm;
 
 const FormBox = styled.div`
   flex: 1;
-  label {
+  span {
     display: block;
     margin-top: 1.2rem;
     font-size: 12px;
@@ -96,7 +96,7 @@ const FormBox = styled.div`
 `;
 const InputBox = styled.div<{ width?: number }>`
   display: flex;
-  width: ${(props) => (props.width ? `${props.width}rem` : "100%")};
+  width: ${(props) => (props.width ? `${props.width}rem` : '100%')};
   height: 3rem;
   margin-top: 0.5rem;
   background-color: #ecebf1;

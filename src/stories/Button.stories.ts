@@ -1,15 +1,15 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 
-import { Button } from "../component/Button";
+import { Button } from '../component/Button';
 
 const meta = {
-  title: "Example/Button",
+  title: 'Example/Button',
   component: Button,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
@@ -23,7 +23,7 @@ export const TextBtn: Story = {
 };
 export const SquareBtn: Story = {
   args: {
-    shape: "square",
+    shape: 'square',
     active: false,
   },
 };
