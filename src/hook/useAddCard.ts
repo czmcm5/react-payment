@@ -1,9 +1,22 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { extractNumber } from '../utils/card';
 
-const useAddCard = () => {
-  const Navigate = useNavigate();
+interface Values {
+  color: string;
+  cardNum: string;
+  MM: string;
+  YY: string;
+  name: string;
+  CVCcode: string;
+  cardPw1: string;
+  cardPw2: string;
+}
+
+interface Props {
+  onSubmit?: (formValue: Values) => void;
+}
+
+const useAddCard = ({ onSubmit }: Props) => {
   const [color, setColor] = useState('gray');
   const [cardNum, setCardNum] = useState('');
   const [MM, setMM] = useState('');
@@ -69,9 +82,7 @@ const useAddCard = () => {
       return alert('모든 항목을 채워주세요.');
     }
 
-    Navigate('/add-sucess', {
-      state: { card: form },
-    });
+    onSubmit?.(form);
   };
 
   return { form, update, submit };

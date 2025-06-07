@@ -7,8 +7,13 @@ import AddCardForm from './compoent/addCardForm';
 import AddCardColor from './compoent/addCardColor';
 
 const AddCard = () => {
+  const Navigate = useNavigate();
   const Navigation = useNavigate();
-  const { form, update, submit } = useAddCard();
+  const { form, update, submit } = useAddCard({
+    onSubmit: (card) => {
+      Navigate('/add-sucess', { state: { card } });
+    },
+  });
 
   return (
     <ModalLayout>
