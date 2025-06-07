@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { Button } from "../component/Button";
-import Card from "../component/Card";
-import ModalLayout from "../component/Modal";
-import useSaveCard from "../hook/useSaveCard";
+import styled from 'styled-components';
+import { Button } from '../component/Button';
+import Card from '../component/Card';
+import ModalLayout from '../component/Modal';
+import useSaveCard from '../hook/useSaveCard';
 
 const AddSuccess = () => {
   const { form, updateCardNick, saveCard } = useSaveCard();
@@ -11,7 +11,7 @@ const AddSuccess = () => {
     <ModalLayout>
       <ContentBox>
         <div className="title">카드등록이 완료되었습니다.</div>
-        <Card form={form} size="large" />
+        <Card {...form} size="large" />
         <input
           value={form.cardNick}
           onChange={updateCardNick}

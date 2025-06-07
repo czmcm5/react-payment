@@ -1,17 +1,17 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { extractNumber } from "../utils/card";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { extractNumber } from '../utils/card';
 
 const useAddCard = () => {
   const Navigate = useNavigate();
-  const [color, setColor] = useState("gray");
-  const [cardNum, setCardNum] = useState("");
-  const [MM, setMM] = useState("");
-  const [YY, setYY] = useState("");
-  const [name, setName] = useState("");
-  const [CVCcode, setCVCcode] = useState("");
-  const [cardPw1, setCardPw1] = useState("");
-  const [cardPw2, setCardPw2] = useState("");
+  const [color, setColor] = useState('gray');
+  const [cardNum, setCardNum] = useState('');
+  const [MM, setMM] = useState('');
+  const [YY, setYY] = useState('');
+  const [name, setName] = useState('');
+  const [CVCcode, setCVCcode] = useState('');
+  const [cardPw1, setCardPw1] = useState('');
+  const [cardPw2, setCardPw2] = useState('');
 
   const form = {
     color,
@@ -30,15 +30,15 @@ const useAddCard = () => {
     const value = extractNumber(e.target.value);
     const formatted = value
       .match(/.{1,4}/g)
-      ?.join("-")
+      ?.join('-')
       .slice(0, 19);
 
-    setCardNum(formatted ?? "");
+    setCardNum(formatted ?? '');
   };
 
   const updateMM = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = extractNumber(e.target.value);
-    if (parseInt(value) > 12 || value === "00") return;
+    if (parseInt(value) > 12 || value === '00') return;
     setMM(value);
   };
 
@@ -65,11 +65,11 @@ const useAddCard = () => {
   };
 
   const submit = () => {
-    if (Object.values(form).some((value) => value === "")) {
-      return alert("모든 항목을 채워주세요.");
+    if (Object.values(form).some((value) => value === '')) {
+      return alert('모든 항목을 채워주세요.');
     }
 
-    Navigate("/add-sucess", {
+    Navigate('/add-sucess', {
       state: { card: form },
     });
   };

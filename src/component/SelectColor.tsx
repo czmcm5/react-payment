@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const colorList = {
-  red: "#e24141",
-  blue: "#547ce4",
-  green: "#7dbf73",
-  coolPink: "#d959b7",
-  mint: "#85dec8",
-  warmPink: "#E76E9A",
-  organge: "#F26D3D",
-  yellow: "#F2BC57",
-  default: "lightGray",
+  red: '#e24141',
+  blue: '#547ce4',
+  green: '#7dbf73',
+  coolPink: '#d959b7',
+  mint: '#85dec8',
+  warmPink: '#E76E9A',
+  organge: '#F26D3D',
+  yellow: '#F2BC57',
+  default: 'lightGray',
 };
 
 const SelectColor = ({
@@ -20,17 +20,17 @@ const SelectColor = ({
   onClick: (color: string) => void;
 }) => {
   return (
-    <Background style={{ display: open ? "" : "none" }}>
+    <Background style={{ display: open ? '' : 'none' }}>
       <Box>
         {Object.entries(colorList).map(
           ([name, code]) =>
-            name !== "default" && (
+            name !== 'default' && (
               <Color
                 key={name}
                 style={{ backgroundColor: code }}
                 onClick={() => onClick(name)}
               />
-            )
+            ),
         )}
       </Box>
     </Background>

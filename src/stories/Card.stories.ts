@@ -1,14 +1,14 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
-import Card from "../component/Card";
+import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
+import Card from '../component/Card';
 
 const meta = {
-  title: "Example/Card",
+  title: 'Example/Card',
   component: Card,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: { onClick: fn() },
 } satisfies Meta<typeof Card>;
 
@@ -17,8 +17,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Small: Story = {
   args: {
-    size: "small",
-    color: "mint",
+    size: 'small',
+    color: 'mint',
   },
 };
 
@@ -26,7 +26,7 @@ export const Medium: Story = {};
 
 export const Large: Story = {
   args: {
-    size: "large",
-    color: "red",
+    size: 'large',
+    color: 'red',
   },
 };

@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { SaveCardInfo } from "../model/card";
+import { useState } from 'react';
+import { SaveCardInfo } from '../model/card';
 
 const useGetCardList = () => {
   const cardList: SaveCardInfo[] = JSON.parse(
-    localStorage.getItem("cardList") || "[]"
+    localStorage.getItem('cardList') || '[]',
   );
 
   const [currentPage, setCurrentPage] = useState(0);

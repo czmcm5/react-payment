@@ -1,28 +1,36 @@
-import styled from "styled-components";
-import { SaveCardInfo } from "../model/card";
-import styles from "../style/card.module.css";
-import { maskCardNumber } from "../utils/card";
-import { colorList } from "./SelectColor";
+import styled from 'styled-components';
+import { SaveCardInfo } from '../model/card';
+import styles from '../style/card.module.css';
+import { maskCardNumber } from '../utils/card';
+import { colorList } from './SelectColor';
 
-interface CardProps {
-  form: SaveCardInfo;
-  size?: "small" | "medium" | "large";
+interface CardProps
+  extends Pick<SaveCardInfo, 'color' | 'cardNum' | 'MM' | 'YY' | 'name'> {
+  size?: 'small' | 'medium' | 'large';
   onClick?: () => void;
 }
 
-const Card = ({ form, size = "medium", ...props }: CardProps) => {
+const Card = ({
+  color,
+  cardNum,
+  MM,
+  YY,
+  name,
+  size = 'medium',
+  ...props
+}: CardProps) => {
   const bgColor =
-    colorList[form.color as keyof typeof colorList] ?? colorList.default;
+    colorList[color as keyof typeof colorList] ?? colorList.default;
   return (
     <CardView
       className={styles[size]}
       {...props}
       style={{ backgroundColor: bgColor }}
     >
-      <CardName>{form.name}카드</CardName>
+      <CardName>{name}카드</CardName>
       <Chip />
-      <CardNum>{maskCardNumber(form.cardNum)}</CardNum>
-      <CardDate>{`${form.MM}/${form.YY}`}</CardDate>
+      <CardNum>{maskCardNumber(cardNum)}</CardNum>
+      <CardDate>{`${MM}/${YY}`}</CardDate>
     </CardView>
   );
 };

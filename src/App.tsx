@@ -1,8 +1,8 @@
-import { Route, Routes } from "react-router-dom";
-import Payment from "./page/Payment/Payment";
-import AddCard from "./page/AddCard/AddCard";
-import AddSuccess from "./page/AddSuccess.tsx";
-import CardList from "./page/CardList";
+import { Route, Routes } from 'react-router-dom';
+import Payment from './page/Payment/Payment';
+import AddCard from './page/AddCard/AddCard';
+import AddSuccess from './page/AddSuccess.tsx';
+import CardList from './page/CardList';
 
 function App() {
   return (

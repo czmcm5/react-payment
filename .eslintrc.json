@@ -30,7 +30,8 @@
   "rules": {
     // 원하는 룰 추가/조정 가능
     // 흠
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "react": {
