@@ -1,0 +1,31 @@
+.basic-button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+.square-active {
+  flex: 1 1;
+  font-size: 20px;
+  color: white;
+  background-color: #2ac1bc;
+}
+.square-disabled {
+  flex: 1 1;
+  font-size: 20px;
+  color: white;
+  background-color: #dfdfdf;
+}
+
+.text-active {
+  color: #2ac1bc;
+}
+.text-disabled {
+  color: #858585;
+}
+
+
+/*# sourceMappingURL=stories-Button-stories.08829bd6.chunk.css.map*/
