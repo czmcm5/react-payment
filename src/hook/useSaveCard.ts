@@ -18,7 +18,6 @@ const useSaveCard = () => {
 
   const saveCard = () => {
     const nickname = cardNick || state.card.name;
-
     const newCard = { ...state.card, nickname };
 
     const cardList = localStorage.getItem('cardList');

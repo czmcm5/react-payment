@@ -1,34 +1,31 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+
+    /* Bundler mode */
     "moduleResolution": "node",
+    // "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+
+    "module": "esnext",
+    "noEmit": false, // true에서 바꿈
     "jsx": "react-jsx",
-    "types": [
-      "vite/client"
-    ]
+    "types": ["vite/client"],
+    "esModuleInterop": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "outDir": "./dist",
+    "declaration": true, // .d.ts 파일 생성
+    "emitDeclarationOnly": true // .d.ts만 출력 (js는 출력하지 않음)
   },
-  "include": [
-    "src",
-    "tailwind.config.js"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.stories.*"
-  ]
+  "include": ["src", "tailwind.config.js"],
+  "exclude": ["node_modules", "**/*.stories.*"]
 }
